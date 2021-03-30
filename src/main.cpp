@@ -1,3 +1,5 @@
+// Play rock-paper-scissors with the computer
+
 #include <cstdlib>
 #include <iostream>
 #include <string>
