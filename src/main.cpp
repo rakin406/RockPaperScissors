@@ -9,6 +9,17 @@ const int NUM_OF_MOVES = 3;
 const std::string MOVES[NUM_OF_MOVES] = {"Rock", "Paper", "Scissors"};
 const std::string HELP = "r for rock, p for paper, s for scissors";
 
+// Judge and print the winner
+void print_winner(int user_wins, int comp_wins) {
+    if (user_wins == comp_wins) {
+        std::cout << "It's a tie!\n";
+    } else if (user_wins > comp_wins) {
+        std::cout << "You won the game!\n";
+    } else if (user_wins < comp_wins) {
+        std::cout << "Computer won the game!\n";
+    }
+}
+
 int main() {
     srand(time(0)); // Used for random number generation
     std::cout << "Instructions:\n";
@@ -61,14 +72,7 @@ int main() {
     std::cout << "User got " << user_wins << " wins\n";
     std::cout << "Computer got " << comp_wins << " wins\n";
 
-    // Judge the winner!
-    if (user_wins == comp_wins) {
-        std::cout << "It's a tie!\n";
-    } else if (user_wins > comp_wins) {
-        std::cout << "You won the game!\n";
-    } else if (user_wins < comp_wins) {
-        std::cout << "Computer won the game!\n";
-    }
+    print_winner(user_wins, comp_wins);
 
     return 0;
 }
