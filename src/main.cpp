@@ -9,9 +9,9 @@ const std::string HELP = "r for rock, p for paper, s for scissors";
 
 int main() {
     std::string user_move;
-    std::cout << ROUNDS << " rounds!\n\n";
     std::cout << "Instructions:\n";
-    std::cout << HELP << "\n\n";
+    std::cout << HELP << "\n";
+    std::cout << ROUNDS << " rounds!\n\n";
 
     for (int i = 0; i < ROUNDS; ++i) {
         std::cout << ">> ";
