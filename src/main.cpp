@@ -30,7 +30,7 @@ int main() {
             } else if (comp_move == MOVES[1]) {
                 std::cout << "Computer wins\n";
                 ++comp_wins;
-            } else if (comp_move == MOVES[2]) {
+            } else {
                 std::cout << "User wins\n";
                 ++user_wins;
             }
