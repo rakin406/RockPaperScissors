@@ -34,6 +34,26 @@ int main() {
                 std::cout << "User wins\n";
                 ++user_wins;
             }
+        } else if (user_move == "p" || user_move == "P") {
+            if (comp_move == MOVES[0]) {
+                std::cout << "Tie\n";
+            } else if (comp_move == MOVES[1]) {
+                std::cout << "Computer wins\n";
+                ++comp_wins;
+            } else {
+                std::cout << "User wins\n";
+                ++user_wins;
+            }
+        } else if (user_move == "s" || user_move == "S") {
+            if (comp_move == MOVES[0]) {
+                std::cout << "Tie\n";
+            } else if (comp_move == MOVES[1]) {
+                std::cout << "Computer wins\n";
+                ++comp_wins;
+            } else {
+                std::cout << "User wins\n";
+                ++user_wins;
+            }
         }
     }
 
