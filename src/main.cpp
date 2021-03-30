@@ -36,25 +36,38 @@ int main() {
             }
         } else if (user_move == "p" || user_move == "P") {
             if (comp_move == MOVES[0]) {
-                std::cout << "Tie\n";
-            } else if (comp_move == MOVES[1]) {
-                std::cout << "Computer wins\n";
-                ++comp_wins;
-            } else {
                 std::cout << "User wins\n";
                 ++user_wins;
+            } else if (comp_move == MOVES[1]) {
+                std::cout << "Tie\n";
+            } else {
+                std::cout << "Computer wins\n";
+                ++comp_wins;
             }
         } else if (user_move == "s" || user_move == "S") {
             if (comp_move == MOVES[0]) {
-                std::cout << "Tie\n";
-            } else if (comp_move == MOVES[1]) {
                 std::cout << "Computer wins\n";
                 ++comp_wins;
-            } else {
+            } else if (comp_move == MOVES[1]) {
                 std::cout << "User wins\n";
                 ++user_wins;
+            } else {
+                std::cout << "Tie\n";
             }
         }
+    }
+
+    // Print scores
+    std::cout << "User got " << user_wins << " wins\n";
+    std::cout << "Computer got " << comp_wins << " wins\n";
+
+    // Judge the winner!
+    if (user_wins == comp_wins) {
+        std::cout << "It's a tie!\n";
+    } else if (user_wins > comp_wins) {
+        std::cout << "You won the game!\n";
+    } else if (user_wins < comp_wins) {
+        std::cout << "Computer won the game!\n";
     }
 
     return 0;
