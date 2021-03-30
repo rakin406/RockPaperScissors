@@ -24,7 +24,8 @@ int main() {
     srand(time(0)); // Used for random number generation
     std::cout << "Instructions:\n";
     std::cout << HELP << "\n";
-    std::cout << ROUNDS << " rounds!\n\n";
+    std::cout << ROUNDS << " rounds!\n";
+    std::cout << "\n";
 
     // Game loop
     std::string user_move, comp_move;
@@ -69,9 +70,11 @@ int main() {
     }
 
     // Print scores
-    std::cout << "User got " << user_wins << " wins\n";
-    std::cout << "Computer got " << comp_wins << " wins\n";
+    std::cout << "\n";
+    std::cout << "User got " << user_wins << " wins.\n";
+    std::cout << "Computer got " << comp_wins << " wins.\n";
 
+    std::cout << "\n";
     print_winner(user_wins, comp_wins);
 
     return 0;
