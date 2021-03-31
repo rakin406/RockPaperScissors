@@ -109,6 +109,9 @@ int main(int argc, char **argv) {
                 std::cout << "Tie\n";
                 std::cout << "\n";
             }
+        } else {
+            std::cout << "Wrong move! Try again\n";
+            ++rounds;
         }
     }
 
