@@ -20,6 +20,7 @@ int main(int argc, char **argv) {
     if (argc >= 2) {
         rounds = atoi(argv[1]);
     } else {
+        std::cout << "Please give argument\n";
         exit(1);
     }
 
