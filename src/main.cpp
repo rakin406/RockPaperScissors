@@ -54,39 +54,65 @@ int main(int argc, char **argv) {
         comp_move = MOVES[rand() % NUM_OF_MOVES];
         if (user_move == "r" || user_move == "R") {
             if (comp_move == MOVES[0]) {
+                std::cout << "User move: Rock\n";
+                std::cout << "Computer move: " << comp_move << "\n";
                 std::cout << "Tie\n";
+                std::cout << "\n";
             } else if (comp_move == MOVES[1]) {
+                std::cout << "User move: Rock\n";
+                std::cout << "Computer move: " << comp_move << "\n";
                 std::cout << "Computer wins\n";
+                std::cout << "\n";
                 ++comp_wins;
             } else {
+                std::cout << "User move: Rock\n";
+                std::cout << "Computer move: " << comp_move << "\n";
                 std::cout << "User wins\n";
+                std::cout << "\n";
                 ++user_wins;
             }
         } else if (user_move == "p" || user_move == "P") {
             if (comp_move == MOVES[0]) {
+                std::cout << "User move: Paper\n";
+                std::cout << "Computer move: " << comp_move << "\n";
                 std::cout << "User wins\n";
+                std::cout << "\n";
                 ++user_wins;
             } else if (comp_move == MOVES[1]) {
+                std::cout << "User move: Paper\n";
+                std::cout << "Computer move: " << comp_move << "\n";
                 std::cout << "Tie\n";
+                std::cout << "\n";
             } else {
+                std::cout << "User move: Paper\n";
+                std::cout << "Computer move: " << comp_move << "\n";
                 std::cout << "Computer wins\n";
+                std::cout << "\n";
                 ++comp_wins;
             }
         } else if (user_move == "s" || user_move == "S") {
             if (comp_move == MOVES[0]) {
+                std::cout << "User move: Scissors\n";
+                std::cout << "Computer move: " << comp_move << "\n";
                 std::cout << "Computer wins\n";
+                std::cout << "\n";
                 ++comp_wins;
             } else if (comp_move == MOVES[1]) {
+                std::cout << "User move: Scissors\n";
+                std::cout << "Computer move: " << comp_move << "\n";
                 std::cout << "User wins\n";
+                std::cout << "\n";
                 ++user_wins;
             } else {
+                std::cout << "User move: Scissors\n";
+                std::cout << "Computer move: " << comp_move << "\n";
                 std::cout << "Tie\n";
+                std::cout << "\n";
             }
         }
     }
 
     // Print scores
-    std::cout << "\n";
     std::cout << "User got " << user_wins << " wins.\n";
     std::cout << "Computer got " << comp_wins << " wins.\n";
 
