@@ -15,7 +15,7 @@ void print_winner(int user_wins, int comp_wins) {
     }
 }
 
-int main() {
+int main(int argc, char **argv) {
     // Constants
     const int ROUNDS = 10;
     const int NUM_OF_MOVES = 3;
