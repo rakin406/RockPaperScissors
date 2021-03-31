@@ -16,22 +16,26 @@ void print_winner(int user_wins, int comp_wins) {
 }
 
 int main(int argc, char **argv) {
+    int rounds;
+    if (argc >= 2) {
+        rounds = atoi(argv[1]);
+    }
+
     // Constants
-    const int ROUNDS = 10;
+    const std::string HELP = "r for rock, p for paper, s for scissors";
     const int NUM_OF_MOVES = 3;
     const std::string MOVES[NUM_OF_MOVES] = {"Rock", "Paper", "Scissors"};
-    const std::string HELP = "r for rock, p for paper, s for scissors";
 
     srand(time(0)); // Used for random number generation
     std::cout << "Instructions:\n";
     std::cout << HELP << "\n";
-    std::cout << ROUNDS << " rounds!\n";
+    std::cout << rounds << " rounds!\n";
     std::cout << "\n";
 
     // Game loop
     std::string user_move, comp_move;
     int user_wins = 0, comp_wins = 0;
-    for (int i = 0; i < ROUNDS; ++i) {
+    for (int i = 0; i < rounds; ++i) {
         std::cout << ">> ";
         std::cin >> user_move;
 
