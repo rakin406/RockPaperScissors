@@ -18,9 +18,16 @@ void print_winner(int user_wins, int comp_wins) {
 int main(int argc, char **argv) {
     int rounds;
     if (argc >= 2) {
-        rounds = atoi(argv[1]);
+        if (argv[1] == "-h" || argv[1] == "--help") {
+            std::cout << "./program <rounds>\n";
+            std::cout << "Example: \"./program 10\" results in 10 rounds\n";
+            exit(0);
+        } else {
+            rounds = atoi(argv[1]);
+        }
     } else {
-        std::cout << "Please give argument\n";
+        std::cout << "Please give argument.\n";
+        std::cout << "Try -h option.\n";
         exit(1);
     }
 
