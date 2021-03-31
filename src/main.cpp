@@ -19,6 +19,8 @@ int main(int argc, char **argv) {
     int rounds;
     if (argc >= 2) {
         rounds = atoi(argv[1]);
+    } else {
+        exit(1);
     }
 
     // Constants
