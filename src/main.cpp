@@ -18,12 +18,14 @@ void print_winner(int user_wins, int comp_wins) {
 int main(int argc, char **argv) {
     int rounds;
     if (argc >= 2) {
-        if (argv[1] == "-h" || argv[1] == "--help") {
-            std::cout << "./program <rounds>\n";
+        std::string option = argv[1];
+        if (option == "-h" || option == "--help") {
+            // Help
+            std::cout << "Usage: ./program <rounds>\n";
             std::cout << "Example: \"./program 10\" results in 10 rounds\n";
             exit(0);
         } else {
-            rounds = atoi(argv[1]);
+            rounds = stoi(option);
         }
     } else {
         std::cout << "Please give argument.\n";
@@ -32,13 +34,12 @@ int main(int argc, char **argv) {
     }
 
     // Constants
-    const std::string HELP = "r for rock, p for paper, s for scissors";
     const int NUM_OF_MOVES = 3;
     const std::string MOVES[NUM_OF_MOVES] = {"Rock", "Paper", "Scissors"};
 
     srand(time(0)); // Used for random number generation
     std::cout << "Instructions:\n";
-    std::cout << HELP << "\n";
+    std::cout << "r for rock, p for paper, s for scissors\n";
     std::cout << rounds << " rounds!\n";
     std::cout << "\n";
 
