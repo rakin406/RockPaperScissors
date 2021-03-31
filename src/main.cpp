@@ -4,11 +4,6 @@
 #include <iostream>
 #include <string>
 
-const int ROUNDS = 10;
-const int NUM_OF_MOVES = 3;
-const std::string MOVES[NUM_OF_MOVES] = {"Rock", "Paper", "Scissors"};
-const std::string HELP = "r for rock, p for paper, s for scissors";
-
 // Judge and print the winner
 void print_winner(int user_wins, int comp_wins) {
     if (user_wins == comp_wins) {
@@ -21,6 +16,12 @@ void print_winner(int user_wins, int comp_wins) {
 }
 
 int main() {
+    // Constants
+    const int ROUNDS = 10;
+    const int NUM_OF_MOVES = 3;
+    const std::string MOVES[NUM_OF_MOVES] = {"Rock", "Paper", "Scissors"};
+    const std::string HELP = "r for rock, p for paper, s for scissors";
+
     srand(time(0)); // Used for random number generation
     std::cout << "Instructions:\n";
     std::cout << HELP << "\n";
