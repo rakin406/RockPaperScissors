@@ -4,6 +4,13 @@
 #include <iostream>
 #include <string>
 
+// Return randomly generated computer move
+std::string generate_move() {
+    srand(time(0));
+    std::string moves[3] = {"Rock", "Paper", "Scissors"};
+    return moves[rand() % 3];
+}
+
 // Judge and print the winner
 void print_winner(int user_wins, int comp_wins) {
     if (user_wins == comp_wins) {
@@ -16,6 +23,7 @@ void print_winner(int user_wins, int comp_wins) {
 }
 
 int main(int argc, char **argv) {
+    // Process CLI argument
     int rounds;
     if (argc >= 2) {
         std::string option = argv[1];
@@ -33,11 +41,7 @@ int main(int argc, char **argv) {
         exit(1);
     }
 
-    // Constants
-    const int NUM_OF_MOVES = 3;
-    const std::string MOVES[NUM_OF_MOVES] = {"Rock", "Paper", "Scissors"};
-
-    srand(time(0)); // Used for random number generation
+    // Instructions
     std::cout << "Instructions:\n";
     std::cout << "r for rock, p for paper, s for scissors\n";
     std::cout << rounds << " rounds!\n";
@@ -51,14 +55,14 @@ int main(int argc, char **argv) {
         std::cin >> user_move;
 
         // Check user moves
-        comp_move = MOVES[rand() % NUM_OF_MOVES];
+        comp_move = generate_move();
         if (user_move == "r" || user_move == "R") {
-            if (comp_move == MOVES[0]) {
+            if (comp_move == "Rock") {
                 std::cout << "User move: Rock\n";
                 std::cout << "Computer move: " << comp_move << "\n";
                 std::cout << "Tie\n";
                 std::cout << "\n";
-            } else if (comp_move == MOVES[1]) {
+            } else if (comp_move == "Paper") {
                 std::cout << "User move: Rock\n";
                 std::cout << "Computer move: " << comp_move << "\n";
                 std::cout << "Computer wins\n";
@@ -72,13 +76,13 @@ int main(int argc, char **argv) {
                 ++user_wins;
             }
         } else if (user_move == "p" || user_move == "P") {
-            if (comp_move == MOVES[0]) {
+            if (comp_move == "Rock") {
                 std::cout << "User move: Paper\n";
                 std::cout << "Computer move: " << comp_move << "\n";
                 std::cout << "User wins\n";
                 std::cout << "\n";
                 ++user_wins;
-            } else if (comp_move == MOVES[1]) {
+            } else if (comp_move == "Paper") {
                 std::cout << "User move: Paper\n";
                 std::cout << "Computer move: " << comp_move << "\n";
                 std::cout << "Tie\n";
@@ -91,13 +95,13 @@ int main(int argc, char **argv) {
                 ++comp_wins;
             }
         } else if (user_move == "s" || user_move == "S") {
-            if (comp_move == MOVES[0]) {
+            if (comp_move == "Rock") {
                 std::cout << "User move: Scissors\n";
                 std::cout << "Computer move: " << comp_move << "\n";
                 std::cout << "Computer wins\n";
                 std::cout << "\n";
                 ++comp_wins;
-            } else if (comp_move == MOVES[1]) {
+            } else if (comp_move == "Paper") {
                 std::cout << "User move: Scissors\n";
                 std::cout << "Computer move: " << comp_move << "\n";
                 std::cout << "User wins\n";
@@ -115,11 +119,9 @@ int main(int argc, char **argv) {
         }
     }
 
-    // Print scores
+    // Print scores and winner
     std::cout << "User got " << user_wins << " wins.\n";
     std::cout << "Computer got " << comp_wins << " wins.\n";
-
-    std::cout << "\n";
     print_winner(user_wins, comp_wins);
 
     return 0;
