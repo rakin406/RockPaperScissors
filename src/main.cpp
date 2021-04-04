@@ -14,7 +14,7 @@ int generate_random(const int &min, const int &max) {
 // Return randomly generated computer move
 std::string generate_move() {
     std::string moves[3] = {"Rock", "Paper", "Scissors"};
-    return moves[generate_random(0, 3)];
+    return moves[generate_random(0, 2)];
 }
 
 // Judge and print the winner
