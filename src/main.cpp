@@ -1,14 +1,20 @@
 // Play rock-paper-scissors with the computer
 
-#include <cstdlib>
 #include <iostream>
+#include <random>
 #include <string>
+
+// Return random integer in range
+int generate_random(const int &min, const int &max) {
+    static thread_local std::mt19937 generator;
+    std::uniform_int_distribution<int> dist(min, max);
+    return dist(generator);
+}
 
 // Return randomly generated computer move
 std::string generate_move() {
-    srand(time(0));
     std::string moves[3] = {"Rock", "Paper", "Scissors"};
-    return moves[rand() % 3];
+    return moves[generate_random(0, 3)];
 }
 
 // Judge and print the winner
