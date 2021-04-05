@@ -6,6 +6,7 @@ rounds is specified by the user through CLI argument.
 ```shell
 git clone https://github.com/rakin406/RockPaperScissors.git
 cd RockPaperScissors
+mkdir build
 make
 ./build/main -h     # Show help information
 ./build/main 10     # You can give any rounds here, I gave 10
