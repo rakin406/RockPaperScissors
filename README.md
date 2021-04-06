@@ -7,7 +7,9 @@ rounds is specified by the user through CLI argument.
 git clone https://github.com/rakin406/RockPaperScissors.git
 cd RockPaperScissors
 mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release ..
 make
-./build/main -h     # Show help information
-./build/main 10     # You can give any rounds here, I gave 10
+./main -h     # Show help information
+./main 10     # You can give any rounds here, I gave 10
 ```
