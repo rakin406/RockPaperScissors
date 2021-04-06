@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(dirname VERSION 1.0)
+project(RockPaperScissors VERSION 1.0)
 
 # Set default build type
 if(NOT CMAKE_BUILD_TYPE)
