@@ -1,3 +1,6 @@
 Checks: >
   bugprone-*,
-  performance-*
+  clang-analyzer-*,
+  performance-*,
+  portability-*,
+  readability-*
