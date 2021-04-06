@@ -53,9 +53,12 @@ int main(int argc, char **argv) {
     std::cout << rounds << " rounds!\n";
     std::cout << "\n";
 
+    std::string user_move;
+    std::string comp_move;
+    int user_wins = 0;
+    int comp_wins = 0;
+
     // Game loop
-    std::string user_move, comp_move;
-    int user_wins = 0, comp_wins = 0;
     for (int i = 0; i < rounds; ++i) {
         std::cout << ">> ";
         std::cin >> user_move;
