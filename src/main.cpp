@@ -54,7 +54,6 @@ int main(int argc, char **argv) {
     std::cout << "\n";
 
     std::string user_move;
-    std::string comp_move;
     int user_wins = 0;
     int comp_wins = 0;
 
@@ -64,7 +63,7 @@ int main(int argc, char **argv) {
         std::cin >> user_move;
 
         // Check user moves
-        comp_move = generate_move();
+        std::string comp_move = generate_move();
         if (user_move == "r" || user_move == "R") {
             if (comp_move == "Rock") {
                 std::cout << "User move: Rock\n";
